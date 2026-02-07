@@ -1,10 +1,10 @@
 import express from "express";
+import routes from "./routes";
 
 const app = express();
+app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({ status: "Agro Forensics Server Running" });
-});
+app.use("/api", routes);
 
 const PORT = process.env.PORT || 5000;
 
